@@ -12,5 +12,5 @@ The task is to read this excel:
 ...then send email information to employees about their hike.
 
 Is it easy to read this excel file in python?
-See [this file](https://github.com/Engin-Boot/consumer-driven-unit-tests/blob/48b20947709d457b159298d3c83c071edc836054/read-excel-poc.py#L3-L7) for an implementation to read and print its contents -
+See [this file](read-excel-poc.py) for an implementation to read and print its contents -
 it's a couple of lines of code.
