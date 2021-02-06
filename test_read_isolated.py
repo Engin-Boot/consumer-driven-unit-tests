@@ -1,9 +1,8 @@
-from unittest import TestCase
 import unittest
 from unittest.mock import patch
 from read_excel_isolated import read_email_data
 
-class TestRead(TestCase):
+class TestRead(unittest.TestCase):
   
   sample_emails = {"email": ['h@dummy', 'q@dummy'], "hike": ['10%', '20%']}
 

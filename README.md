@@ -20,7 +20,7 @@ Let's say our product needs to read [this excel](emails-to-send.xlsx):
 
 ![excel-sample](email-sample.png)
 
-...then send email information to employees about their hike.
+And then send email information to employees about their hike.
 
 Is it easy to read this excel file?
 See [this file](read_excel_poc.py) for an implementation.
@@ -31,29 +31,35 @@ it's a couple of lines of code.
 
 [This file](test_read_isolated.py) is an attempt
 to test the functionality without dependencies.
-It uses mocking to remove the dependency on pandas, excel and the filesystem.
+It uses mocking to remove the dependency on pandas, excel and the file-system.
 The mock returns predefined sample data.
 
-The implementation is changed to make it testable -
-Notice that the function now returns the result instead of printing it.
-This makes the behavior 'observable' by a test.
+By the way, we've made the implementation testable
+by returning the result instead of printing it.
+This makes the behavior 'observable' by an automated test,
+rather than a human having to check the console every time.
 
-The [sample data](...) in the file is interesting.
+The [sample data](https://github.com/Engin-Boot/consumer-driven-unit-tests/blob/main/test_read_isolated.py#L7-L9)
+used in the test is interesting.
 It gives readable percentages, like in the excel.
-That was not the case when real data came in from the excel!
+That was not the case when the data actually came from the excel!
 
-Did the unit test deviate from reality? Does this give us confidence?
+Did the unit test deviate from reality? Did it 'hide' the real behavior?
+Does this give us confidence? Can we do better?
 
 ### Consumer-driven play
 
-What can upset a customer...
+In this approach, we build tests to safeguard our consumer's value.
+What can upset them? What can engage them?
 
-Separate reading from processing. Pure function...
+## Exercise-1
 
-## Finishing up
+Think of a simple unit test to check the presence of a '%'
+and match content entered in the file.
+Think of the test as a precise statement of customer-need.
+Enter your test (in English or Python) [here](test_hike_content.py)
 
-[This file](...) implements emails. [Here are the instructions](...)
-to test it manually.
+## Exercise-2
 
-How can you catch all consumer-relevant functionality early?
-Design unit-tests for that.
+Design unit-tests to catch possible human-errors in data-entry.
+Put your thoughts [here](test_data_load.py)
