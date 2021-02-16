@@ -2,8 +2,9 @@ import unittest
 from unittest.mock import patch
 from read_excel_isolated import read_email_data
 
+
 class TestRead(unittest.TestCase):
-  
+
   sample_emails = {"email": ['h@dummy', 'q@dummy'], "hike": ['10%', '20%']}
 
   @patch('read_excel_isolated.pandas.read_excel', return_value=sample_emails)
@@ -15,6 +16,7 @@ class TestRead(unittest.TestCase):
   def test_error_report_on_non_existent_file(self, _):
     mails = read_email_data()
     self.assertEqual(len(mails), 0)
+
 
 if __name__ == '__main__':
   unittest.main()
