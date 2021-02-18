@@ -5,7 +5,10 @@ from read_excel_isolated import read_email_data
 
 class TestRead(unittest.TestCase):
 
-  sample_emails = {"email": ['h@dummy', 'q@dummy'], "hike": ['10%', '20%']}
+  sample_emails = {
+    "email": ['h@dummy.com', 'q@dummy.com'],
+    "hike": ['10%', '20%']
+  }
 
   @patch('read_excel_isolated.pandas.read_excel', return_value=sample_emails)
   def test_email_read_from_file(self, _):
