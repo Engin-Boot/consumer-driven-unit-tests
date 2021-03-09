@@ -31,3 +31,7 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=4 --max-line-length=80 --ignore=E111,E121,E126 --statistics
+    - name: Try-out the poc with the real excel
+      run: python read_excel_poc.py
+    - name: Run the unit-test with mocks
+      run: python test_read_isolated.py
