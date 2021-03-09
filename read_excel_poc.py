@@ -1,8 +1,8 @@
-from pandas import read_excel
+import pandas
 emaildata = None
 
 try:
-  emaildata = read_excel('emails-to-send.xlsx', sheet_name='Sheet1',
+  emaildata = pandas.read_excel('emails-to-send.xlsx', sheet_name='Sheet1',
                          engine='openpyxl')
 except IOError:
   print('unable to read')
